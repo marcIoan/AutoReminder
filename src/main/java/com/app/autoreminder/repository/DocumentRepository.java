@@ -58,7 +58,7 @@ public class DocumentRepository {
             }
             connection.close();
         }catch (SQLException ex) {
-            x.printStackTrace();
+            ex.printStackTrace();
         }
     }
 
