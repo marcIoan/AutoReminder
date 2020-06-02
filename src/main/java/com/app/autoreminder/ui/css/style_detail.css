@@ -1,0 +1,28 @@
+.table {
+    margin: 20px;
+}
+
+.list-group ul {
+    width: 100%;
+    text-align: center;
+}
+
+.list-group li {
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+ a {
+    display: inline-block;
+    margin: 20px;
+
+}
+
+
+h4 {
+    font-size: 1rem;
+    font-style: italic;
+    padding: 20px;
+
+}
+

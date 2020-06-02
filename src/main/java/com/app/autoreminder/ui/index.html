@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="css/style_index.css" media="screen"/>
+    <title>Bare - Start Bootstrap Template</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Auto Reminder</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="detail.html">Detail</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <table id="list" class="table table-dark table-hover">
+            <thead>
+            <tr>
+                <td>Name</td>
+                <td>Model</td>
+                <td>Year</td>
+                <td>
+                    <button id="btn" type="button" class="btn btn-success btn-sm" data-target="#myModal"
+                            data-toggle="modal" class="MainNavText" id="MainNavHel"
+                            href="#myModal">New
+                    </button>
+                </td>
+            </tr>
+            </thead>
+            <tbody id="table">
+            <td>Dacia</td>
+            <td>Logan</td>
+            <td>2019</td>
+            <td>
+                <button type="button" class="btn btn-info" onclick="window.location.href='detail.html'">Info</button>
+            </td>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">New Car</h4>
+            </div>
+            <div class="modal-body">
+                <h5>Name</h5>
+                <input type="text" class="form-control" id="Data" placeholder="Name"
+                       autocomplete="off" required>
+                <h5>Model</h5>
+                <input type="text" class="form-control" id="Dat" placeholder="Model"
+                       autocomplete="off" required>
+                <h5>Year</h5>
+                <input type="Number" class="form-control" id="Da" placeholder="Year"
+                       autocomplete="off" required>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="create-button" type="submit" class="btn btn-primary">Add Car</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.slim.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+
+</html>
