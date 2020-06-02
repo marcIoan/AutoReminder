@@ -10,7 +10,9 @@ public class main {
 
         DocumentService documentService = new DocumentService();
 
-        System.out.println(documentService.selectById((long) 1));
+
+
+
 
     }
 }

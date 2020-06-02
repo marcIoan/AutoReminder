@@ -1,4 +1,5 @@
 package com.app.autoreminder.repository;
+
 import com.app.autoreminder.model.Car;
 
 import java.sql.*;
@@ -36,6 +37,25 @@ public class CarRepository {
         }
     }
 
+    public void deleteById(int id) {
+        try {
+            Connection connection = DriverManager.getConnection(host, dbUsername, dbPassword);
+            String sql = "DELETE FROM car WHERE id = ?";
+
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+
+            int row = statement.executeUpdate();
+
+            if (row > 0) {
+                System.out.println("the car's information has been deleted. ");
+            }
+            connection.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
     public ArrayList<Car> selectAll() {
         ArrayList<Car> cars = new ArrayList<>();
 
@@ -61,6 +81,7 @@ public class CarRepository {
             ex.printStackTrace();
         }
         return cars;
-
     }
+
+
 }

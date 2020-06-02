@@ -26,6 +26,13 @@ public class DocumentService {
         return documentRepository.selectById(id);
     }
 
+    public void modifyById(int id,int car_id,String name,String expiration_data) {
+         documentRepository.updateById(id,car_id,name,expiration_data);
+    }
+
+    public void deleteById(int id) {
+        documentRepository.deleteById(id);
+    }
 
 
 
