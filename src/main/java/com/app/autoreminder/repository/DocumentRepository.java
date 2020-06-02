@@ -52,6 +52,13 @@ public class DocumentRepository {
             statement.setLong(4,id);
 
             int rows = statement.executeUpdate();
+
+            if(rows > 0) {
+                System.out.println("the document information has been updated");
+            }
+            connection.close();
+        }catch (SQLException ex) {
+            ex.printStackTrace();
         }
     }
 
