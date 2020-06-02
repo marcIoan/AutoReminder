@@ -61,14 +61,14 @@ public class DocumentRepository {
     }
 
 
-    public void updateById(int id, int car_id, String name, String expiration_data) {
+    public void updateById(Long id, Long car_id, String name, String expiration_data) {
 
         try {
             Connection connection = DriverManager.getConnection(host, dbUsername, dbPassword);
             String sql = "UPDATE documents SET car_id =?, name =?, expiration_data =? WHERE id =? ";
 
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, car_id);
+            statement.setLong(1, car_id);
             statement.setString(2, name);
             statement.setString(3, expiration_data);
             statement.setLong(4, id);

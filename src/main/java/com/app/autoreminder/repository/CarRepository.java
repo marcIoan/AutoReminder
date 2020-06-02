@@ -38,13 +38,13 @@ public class CarRepository {
         }
     }
 
-    public void deleteById(int id) {
+    public void deleteById(Long id) {
         try {
             Connection connection = DriverManager.getConnection(host, dbUsername, dbPassword);
             String sql = "DELETE FROM car WHERE id = ?";
 
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, id);
+            statement.setLong(1, id);
 
             int row = statement.executeUpdate();
 
@@ -57,7 +57,7 @@ public class CarRepository {
         }
     }
 
-    public void updateById(int id, String name, String model, String year, String email) {
+    public void updateById(Long id, String name, String model, String year, String email) {
         try {
             Connection connection = DriverManager.getConnection(host, dbUsername, dbPassword);
 
@@ -68,7 +68,7 @@ public class CarRepository {
             statement.setString(2, model);
             statement.setString(3, year);
             statement.setString(4, email);
-            statement.setInt(5, id);
+            statement.setLong(5, id);
 
             int rows = statement.executeUpdate();
 
@@ -116,7 +116,7 @@ public class CarRepository {
 
             String sql = "SELECT * FROM car WHERE id =? ";
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setLong(1,id);
+            statement.setLong(1, id);
             ResultSet result = statement.executeQuery();
 
 
@@ -127,12 +127,12 @@ public class CarRepository {
                 String year = result.getString("year");
                 String email = result.getString("email");
 
-                car = new Car(identifier,name,model,year,email);
+                car = new Car(identifier, name, model, year, email);
             }
             connection.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-       return car;
+        return car;
     }
 }

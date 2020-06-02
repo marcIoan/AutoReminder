@@ -13,11 +13,6 @@ public class CarService {
     private CarRepository carRepository;
 
 
-    // get car with documents
-    // call car repository for car
-    // call carRepository for document
-
-
     public CarService() {
         carRepository = new CarRepository();
 
@@ -27,11 +22,11 @@ public class CarService {
         carRepository.insert(name, model, year, email);
     }
 
-    public void deleteCar(int id) {
+    public void deleteCar(Long id) {
         carRepository.deleteById(id);
     }
 
-    public void modifyCarById(int id, String name, String model, String year, String email) {
+    public void modifyCarById(Long id, String name, String model, String year, String email) {
         carRepository.updateById(id, name, model, year, email);
     }
 
@@ -42,6 +37,7 @@ public class CarService {
     public Car selectById(Long id) {
         return carRepository.selectById(id);
     }
+
 
     public CarWithDocument selectCarWithDocument(Long carId) {
         Car car = carRepository.selectById(carId);

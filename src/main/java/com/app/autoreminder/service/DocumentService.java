@@ -26,7 +26,7 @@ public class DocumentService {
         return documentRepository.selectById(id);
     }
 
-    public void modifyById(int id,int car_id,String name,String expiration_data) {
+    public void modifyById(Long id,Long car_id,String name,String expiration_data) {
          documentRepository.updateById(id,car_id,name,expiration_data);
     }
 

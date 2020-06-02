@@ -33,6 +33,9 @@ public class Car {
         return year;
     }
 
+    public String getEmail() {
+        return email;
+    }
 
     public String toString() {
         return "Id " + id + " Name " + name + " Model " + model + " Year " + year;
