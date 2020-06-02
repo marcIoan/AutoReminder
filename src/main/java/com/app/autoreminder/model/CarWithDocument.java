@@ -6,7 +6,7 @@ public class CarWithDocument {
     private Car car;
     private ArrayList<Document> documents;
 
-    public CarWithDocument(Car car,ArrayList<Document> documents) {
+    public CarWithDocument(Car car, ArrayList<Document> documents) {
         this.car = car;
         this.documents = documents;
     }
@@ -19,4 +19,7 @@ public class CarWithDocument {
         return documents;
     }
 
+    public String toString() {
+        return "Car " + car + " Documents " + documents;
+    }
 }

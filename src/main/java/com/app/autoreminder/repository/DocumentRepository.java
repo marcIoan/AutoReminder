@@ -39,14 +39,14 @@ public class DocumentRepository {
         }
     }
 
-    public void deleteById(int id) {
+    public void deleteById(Long id) {
 
         try {
             Connection connection = DriverManager.getConnection(host, dbUsername, dbPassword);
             String sql = "DELETE FROM documents WHERE id =? ";
 
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, id);
+            statement.setLong(1, id);
 
 
             int rows = statement.executeUpdate();
@@ -59,7 +59,6 @@ public class DocumentRepository {
             ex.printStackTrace();
         }
     }
-
 
 
     public void updateById(int id, int car_id, String name, String expiration_data) {
@@ -138,5 +137,35 @@ public class DocumentRepository {
             ex.printStackTrace();
         }
         return document;
+    }
+
+    public ArrayList<Document> selectByCarId(Long carId) {
+        ArrayList<Document> documents = new ArrayList<>();
+
+        try {
+            Connection connection = DriverManager.getConnection(host, dbUsername, dbPassword);
+
+            String sql = "SELECT * FROM documents WHERE car_id = ? ";
+
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setLong(1, carId);
+            ResultSet result = statement.executeQuery();
+
+            while (result.next()) {
+                Long id = result.getLong("id");
+                Long car_id = result.getLong("car_id");
+                String name = result.getString("name");
+                String expiration_data = result.getString("expiration_data");
+
+                Document document = new Document(id, car_id, name, expiration_data);
+                documents.add(document);
+
+
+            }
+            connection.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return documents;
     }
 }

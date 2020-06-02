@@ -30,7 +30,7 @@ public class DocumentService {
          documentRepository.updateById(id,car_id,name,expiration_data);
     }
 
-    public void deleteById(int id) {
+    public void deleteById(Long id) {
         documentRepository.deleteById(id);
     }
 

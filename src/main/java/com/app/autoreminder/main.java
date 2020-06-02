@@ -12,6 +12,7 @@ public class main {
         CarService carService = new CarService();
 
 
+        System.out.println(carService.selectCarWithDocument((long)2));
 
 
     }

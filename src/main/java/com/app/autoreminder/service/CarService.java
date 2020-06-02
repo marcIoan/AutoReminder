@@ -1,14 +1,17 @@
 package com.app.autoreminder.service;
 
 import com.app.autoreminder.model.Car;
+import com.app.autoreminder.model.CarWithDocument;
 import com.app.autoreminder.model.Document;
 import com.app.autoreminder.repository.CarRepository;
+import com.app.autoreminder.repository.DocumentRepository;
 
 import java.util.ArrayList;
 
 public class CarService {
 
     private CarRepository carRepository;
+
 
     // get car with documents
     // call car repository for car
@@ -17,6 +20,7 @@ public class CarService {
 
     public CarService() {
         carRepository = new CarRepository();
+
     }
 
     public void addCar(String name, String model, String year, String email) {
@@ -35,13 +39,16 @@ public class CarService {
         return carRepository.selectAll();
     }
 
-    public Car selectById(Long id){
+    public Car selectById(Long id) {
         return carRepository.selectById(id);
     }
 
-   
-
-
+    public CarWithDocument selectCarWithDocument(Long carId) {
+        Car car = carRepository.selectById(carId);
+        DocumentRepository documentRepository = new DocumentRepository();
+        ArrayList<Document> documents = documentRepository.selectByCarId(carId);
+        return new CarWithDocument(car, documents);
+    }
 
 
 }
