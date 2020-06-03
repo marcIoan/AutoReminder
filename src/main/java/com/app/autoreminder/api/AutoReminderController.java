@@ -50,9 +50,7 @@ public class AutoReminderController {
         carService.deleteCar(id);
     }
 
-
-    //Car with document
-
+    
     @GetMapping("/car/{id}/doc")
     public CarWithDocument getCarsWithDocument(@PathVariable Long id) {
         return carService.selectCarWithDocument(id);
