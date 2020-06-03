@@ -6,16 +6,17 @@ import com.app.autoreminder.model.Document;
 import com.app.autoreminder.repository.CarRepository;
 import com.app.autoreminder.repository.DocumentRepository;
 
+import javax.print.Doc;
 import java.util.ArrayList;
 
 public class CarService {
 
     private CarRepository carRepository;
-
+    private DocumentRepository documentRepository;
 
     public CarService() {
         carRepository = new CarRepository();
-
+        documentRepository = new DocumentRepository();
     }
 
     public void addCar(String name, String model, String year, String email) {
@@ -44,6 +45,12 @@ public class CarService {
         DocumentRepository documentRepository = new DocumentRepository();
         ArrayList<Document> documents = documentRepository.selectByCarId(carId);
         return new CarWithDocument(car, documents);
+    }
+
+    public Document selectDocumentByIdAssociateACar(Long docId) {
+        return documentRepository.selectById(docId);
+
+
     }
 
 
