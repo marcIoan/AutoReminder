@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.print.Doc;
 import java.util.ArrayList;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class AutoReminderController {
 
@@ -50,7 +51,7 @@ public class AutoReminderController {
         carService.deleteCar(id);
     }
 
-    
+
     @GetMapping("/car/{id}/doc")
     public CarWithDocument getCarsWithDocument(@PathVariable Long id) {
         return carService.selectCarWithDocument(id);
@@ -73,7 +74,7 @@ public class AutoReminderController {
 
     @DeleteMapping("/car/{carId}/doc/{docId}")
     public void deleteDocumentAssociatedWithCar(@PathVariable Long carId, @PathVariable Long docId) {
-          documentRepository.deleteById(docId);
+        documentRepository.deleteById(docId);
     }
 
 }
