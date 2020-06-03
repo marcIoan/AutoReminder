@@ -24,14 +24,13 @@ function getCar() {
 
             let car = car_list[i];
 
-            console.log("car" + car);
-            let tbl = document.getElementById("tableL");
-            let tableRow = tbl.insertRow();
-            let cell1 = tableRow.insertCell();
-            let cell2 = tableRow.insertCell();
-            let cell3 = tableRow.insertCell();
-            let cell4 = tableRow.insertCell();
-            let cell5 = tableRow.insertCell();
+            let tblCar = document.getElementById("tableL");
+            let carRow = tblCar.insertRow();
+            let cell1 = carRow.insertCell();
+            let cell2 = carRow.insertCell();
+            let cell3 = carRow.insertCell();
+            let cell4 = carRow.insertCell();
+            let cell5 = carRow.insertCell();
 
 
             cell1.innerHTML = car.name;
@@ -44,16 +43,17 @@ function getCar() {
             let buttonCarInfo = document.createElement("button");
             buttonCarInfo.className = "btn btn-info";
             buttonCarInfo.innerHTML = "Info";
+            buttonCarInfo.setAttribute("data_id", car.id);
 
             buttonCarInfo.addEventListener('click', function (e) {
-                let idCar = e.target.getAtribute("car_id");
-                localStorage.setItem("prodId", idCar);
+                let idCar = e.target.getAttribute("data_id");
+                localStorage.setItem("carId", idCar);
                 window.open('detail.html', '_self');
             }, false);
 
 
             cell5.appendChild(buttonCarInfo);
-            carListSelector.appendChild(tableRow);
+            carListSelector.appendChild(carRow);
         }
     })
 }
