@@ -20,7 +20,7 @@ function getCar() {
 
         let carListSelector = document.querySelector("#tableL");
 
-        for (let i = 0; i < car_list.length; i++) {
+          for (let i = 0; i < car_list.length; i++) {
 
             let car = car_list[i];
 
