@@ -45,7 +45,8 @@
 <div class="container" id="carContent" style="text-align: left">
 </div>
 </div>
-
+<div id="button" style="text-align: center">
+</div>
 <div class="container" id="docList" style="text-align: center ;font-size:20px">
 
 </div>
@@ -59,19 +60,44 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-body">
-                <h1>DATA</h1>
-                <input type="Number" class="form-control" id="Data2" placeholder="Date"
+                <h5>Name</h5>
+                <input type="text" class="form-control" id="Data" placeholder="Name"
+                       autocomplete="off" required>
+                <h5>Data</h5>
+                <input type="text" class="form-control" id="Data2" placeholder="Date"
                        autocomplete="off" required>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button id="crate-button" type="submit" class="btn btn-primary">Modify</button>
+                <button id="modifyButton" type="submit" class="btn btn-primary">Modify</button>
             </div>
         </div>
 
     </div>
 </div>
 
+<div id="myModalAddDocument" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <h5>Name</h5>
+                <input type="text" class="form-control" id="createDocumentNume" placeholder="Name"
+                       autocomplete="off" required>
+                <h5>Data</h5>
+                <input type="text" class="form-control" id="createDocumentData" placeholder="Date"
+                       autocomplete="off" required>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="createButtonDoc" type="submit" class="btn btn-primary">Add</button>
+                <button id="createButtonDoc" type="submit" class="btn btn-primary">Delete</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 <div id="myModalNewDocument" class="modal fade" role="dialog">
     <div class="modal-dialog">

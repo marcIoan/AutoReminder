@@ -72,6 +72,8 @@ public class AutoReminderController {
         documentRepository.updateById(docId, carId, d.getName(), d.getExpiration_data());
     }
 
+
+
     @DeleteMapping("/car/{carId}/doc/{docId}")
     public void deleteDocumentAssociatedWithCar(@PathVariable Long carId, @PathVariable Long docId) {
         documentRepository.deleteById(docId);

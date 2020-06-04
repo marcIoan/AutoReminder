@@ -160,7 +160,6 @@ public class DocumentRepository {
                 Document document = new Document(id, car_id, name, expiration_data);
                 documents.add(document);
 
-
             }
             connection.close();
         } catch (SQLException ex) {
