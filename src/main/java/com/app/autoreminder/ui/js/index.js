@@ -20,7 +20,7 @@ function getCar() {
 
         let carListSelector = document.querySelector("#tableL");
 
-          for (let i = 0; i < car_list.length; i++) {
+        for (let i = 0; i < car_list.length; i++) {
 
             let car = car_list[i];
 
@@ -56,6 +56,36 @@ function getCar() {
             carListSelector.appendChild(carRow);
         }
     })
+}
+
+function createCar() {
+    let createName = document.querySelector("#createNameCar");
+    let createModel = document.querySelector("#createModelCar");
+    let createYear = document.querySelector("#createYearCar");
+    let createEmail = document.querySelector("#createEmailCar");
+
+    let createNewCar = {
+        name: createName,
+        model: createModel,
+        year: createYear,
+        email: createEmail,
+    };
+
+    return fetch(Server_Url + "/car", {
+        method: 'post',
+        body: JSON.stringify(createNewCar),
+        headers: new Headers({
+            'content-type': 'application/json'
+        })
+    }).then(
+        function (response) {
+            if (response.ok) {
+                console.log("ok")
+            } else {
+                console.log("PROBLEM")
+            }
+        });
+
 }
 
 
